@@ -9,3 +9,14 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+
+.br-pagebody {
+    margin-top: 30px;
+    padding: 0 15px;
+}
+@media (min-width: 576px) {
+    .br-pagebody {
+        padding: 0 30px;
+    }
+}

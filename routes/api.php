@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Backend\ContentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Http\Request;
@@ -21,14 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-
-Route::group(['middleware' => 'auth:sanctum'], function(){
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::resource('category', CategoryController::class);
-    Route::post('category-update', [CategoryController::class, 'update']);
-    Route::resource('item', ItemController::class);
-    Route::post('item', [ItemController::class, 'store']);
-    Route::post('item-update', [ItemController::class, 'update']);
-});
+Route::get('/admin', [ContentController::class, 'index'])->name("admin.index");
+Route::resource('/contents', ContentController::class);

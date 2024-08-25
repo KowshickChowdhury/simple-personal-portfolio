@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\ContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,15 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::group(['middleware'=>'auth:sanctum'], function () {
-    Route::get('/{any}', function () {
-        return view('app');
-    })->where('any','.*');
+// Route::get('/admin', function () {
+//     return view('content.index');
+// });
+
+
+Route::get('/admin', [ContentController::class, 'index'])->name("admin.index");
+
+Route::get('/admin/content/create', function () {
+    return view('content.create');
 });
 
 Route::get('/{any}', function () {

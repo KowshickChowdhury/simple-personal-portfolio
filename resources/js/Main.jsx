@@ -7,12 +7,14 @@ import { Route,
   RouterProvider} from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
 import Home from './pages/Home';
+import Blogs from './pages/Blogs';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">        
       <Route element={<MainLayout />}>
         <Route path='/' element={<Home />} />
+        <Route path='/blogs' element={<Blogs />} />
       </Route>
       <Route path="*" element={<h1>Page not found</h1>} />
     </Route>

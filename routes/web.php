@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 
 // Route::get('/admin', [ContentController::class, 'index'])->name("admin.index");
+
 // Backend route's
 Route::get('/admin', [ContentController::class, 'index'])->name("admin.index");
 Route::resource('/contents', ContentController::class);

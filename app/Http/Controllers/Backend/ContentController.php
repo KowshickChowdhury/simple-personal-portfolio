@@ -42,7 +42,7 @@ class ContentController extends Controller
 
         $content->save();
 
-        return redirect()->route('contents.index')->with('success', 'Content added successfully.');
+        return redirect()->route('contents.index')->with('message', 'Content added successfully.');
     }
 
     public function edit(string $id)
@@ -76,7 +76,7 @@ class ContentController extends Controller
 
         $content->save();
 
-        return redirect()->route('contents.index')->with('success', 'Content added successfully.');
+        return redirect()->route('contents.index')->with('message', 'Content updated successfully.');
     }
 
     public function destroy(string $id)

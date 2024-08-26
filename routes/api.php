@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\ContentController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,10 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Backend route's
-Route::get('/admin', [ContentController::class, 'index'])->name("admin.index");
-Route::resource('/contents', ContentController::class);
-Route::post('/content/{id}/edit', [ContentController::class, 'update'])->name("content.update");
-Route::post('/content/{id}/delete', [ContentController::class, 'destroy'])->name("content.delete");
-
 // Frontend api's
+Route::get('/blogs', [BlogController::class, 'index']);

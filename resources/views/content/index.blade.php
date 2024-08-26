@@ -40,7 +40,11 @@
                     <td>{{ $i++ }}</td>
                     <td>{{ $content->title }}</td>
                     <td>{{ $content->type }}</td>
-                    <td>{{ $content->content }}</td>
+                    @php
+                        $words = explode(' ', $content->content);
+                        $shortContent = implode(' ', array_slice($words, 0, 10)) . (count($words) > 10 ? '...' : '');
+                    @endphp
+                    <td>{{ $shortContent }}</td>
                     <td>{{ $content->status }}</td>
                     <td class="p-0">
                     <a class="btn text-info" href="{{ route('contents.edit', $content->id) }}">Edit</a>

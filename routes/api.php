@@ -3,7 +3,9 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\ContentController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +27,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Frontend api's
 Route::get('/blogs', [BlogController::class, 'index']);
+Route::get('/blog/{title}', [BlogController::class, 'show']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']);

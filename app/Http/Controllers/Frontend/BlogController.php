@@ -13,7 +13,14 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs = Content::where('type', 'blog')->get();
+        $blogs = Content::where('type', 'blog')->where('status', 'published')->get();
         return $this->sendResponse($blogs);
+    }
+
+    public function show($title)
+    {
+        // dd($title);
+        $blog = Content::where('title', $title)->first();
+        return $this->sendResponse($blog);
     }
 }

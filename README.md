@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Inventory Management System
+# Simple Personal Portfolio
 
-Welcome to the Inventory Management System! This project is built using Laravel for the backend and React for the frontend.
+Welcome to the Simple Personal Portfolio! This project is built using Laravel for the backend and React for the frontend.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -41,7 +41,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 2. Navigate to the project directory:
 
-    cd inventory-management-system
+    cd simple-personal-portfolio
 
 3. Install backend dependencies:
 
@@ -84,7 +84,11 @@ To run the project, follow these steps:
 
 3. Access the application in your browser:
 
-    http://localhost:3000
+    http://127.0.0.1:8000
+
+4. To Add Contents write /admin with the url
+    
+    http://127.0.0.1:8000/admin
 
 ## About Laravel
 

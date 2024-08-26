@@ -38,8 +38,6 @@ class ContentController extends Controller
         $content->title = $request->title;
         $content->content = $request->content;
         $content->type = $request->type;
-        // $content->price = $request->price;
-        // $content->preview_link = $request->preview_link;
         $content->status = $request->status;
 
         $content->save();
@@ -47,9 +45,45 @@ class ContentController extends Controller
         return redirect()->route('contents.index')->with('success', 'Content added successfully.');
     }
 
-    public function edit($id)
+    public function edit(string $id)
     {
+        $data['content'] = Content::find($id);
+        // dd($content);
+        return view('content.update', $data);
+    }
+    
+    public function update(Request $request, string $id)
+    {
+        // dd($id);
+        $content = new Content();
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'type' => 'required|string',
+            'status' => 'required|string',
+        ]);
+
         $content = Content::find($id);
-        return view('content.update', $content);
+
+        if (!$content) {
+            return redirect()->route('contents.index')->with('error', 'Content not found.');
+        }
+
+        $content->title = $request->title;
+        $content->content = $request->content;
+        $content->type = $request->type;
+        $content->status = $request->status;
+
+        $content->save();
+
+        return redirect()->route('contents.index')->with('success', 'Content added successfully.');
+    }
+
+    public function destroy(string $id)
+    {
+        // dd($id);
+        $content = Content::find($id);
+        $content->delete();
+        return redirect()->route('contents.index')->with('message', 'Content Deleted Successfully');
     }
 }

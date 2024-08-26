@@ -44,7 +44,7 @@
                     <td>{{ $content->status }}</td>
                     <td class="p-0">
                     <a class="btn text-info" href="{{ route('contents.edit', $content->id) }}">Edit</a>
-                    <button class="btn text-danger bg-white" onclick="openDeleteModal({{ $content->id }})" value="{{$content->id}}" id="homeproductdelete">Delete</button>
+                    <button class="btn text-danger bg-white" onclick="openDeleteModal({{ $content->id }})" value="{{$content->id}}" id="homecontentdelete">Delete</button>
                     </td>
                 </tr>
             @endforeach
@@ -63,7 +63,7 @@
       <div class="modal-dialog modal-dialog-top" role="document">
           <div class="modal-content tx-size-sm">
               <div class="modal-body tx-center pd-y-20 pd-x-20">
-                  <form id="deleteProductForm" action="#" method="post">
+                  <form id="deleteContentForm" action="{{ route('content.delete', $content->id) }}" method="post">
                       @csrf
                       <input type="hidden" name="content_id" id="content_id">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">

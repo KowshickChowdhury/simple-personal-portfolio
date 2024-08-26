@@ -9,7 +9,7 @@
     <div class="col-xl-7 mx-auto">
         <div class="form-layout form-layout-4">
 
-            <form action="{{ route('contents.update') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('content.update', $content->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <label class="col-sm-3 form-control-label">Title: <span class="tx-danger">*</span></label>
@@ -49,7 +49,7 @@
 
                 <div class="row mt-3">
                     <div class="col-sm-12 mg-t-10 mg-sm-t-0 text-end">
-                        <a href="#" type="button" class="btn btn-secondary text-white mr-2">Cancel</a>
+                        <a href="{{ route('contents.index') }}" type="button" class="btn btn-secondary text-white mr-2">Cancel</a>
                         <button type="submit" class="btn btn-info">Update</button>
                     </div>
                 </div><!-- row -->

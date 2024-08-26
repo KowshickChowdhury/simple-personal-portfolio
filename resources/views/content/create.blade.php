@@ -49,7 +49,7 @@
 
                 <div class="row mt-3">
                     <div class="col-sm-12 mg-t-10 mg-sm-t-0 text-end">
-                        <a href="#" type="button" class="btn btn-secondary text-white mr-2">Cancel</a>
+                        <a href="{{ route('contents.index') }}" type="button" class="btn btn-secondary text-white mr-2">Cancel</a>
                         <button type="submit" class="btn btn-info">Save</button>
                     </div>
                 </div><!-- row -->

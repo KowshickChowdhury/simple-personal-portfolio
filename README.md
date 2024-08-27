@@ -90,6 +90,8 @@ To run the project, follow these steps:
     
     http://127.0.0.1:8000/admin
 
+5. Import the sql file which is i provided into DB file folder
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
